@@ -1,9 +1,9 @@
 import {FormRow, Logo} from "../components";
 import Wrapper from "../assets/wrappers/RegisterPage";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {toast} from "react-toastify";
 import {useDispatch, useSelector} from "react-redux";
-import {store} from "../store";
+import {useNavigate} from "react-router-dom";
 import {loginUser, registerUser} from "../features/user/userSlice";
 
 
@@ -12,9 +12,19 @@ const initialState = {
 }
 
 const Register = () => {
+    const navigate = useNavigate()
     const dispatch = useDispatch();
     const {isLoading, user} = useSelector((store) => store.user)
     const [values, setValues] = useState(initialState)
+
+
+    useEffect(() => {
+        if (user) {
+            setTimeout(() => {
+                navigate('/')
+            }, 3000)
+        }
+    }, [user, navigate])
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -49,14 +59,16 @@ const Register = () => {
                 <FormRow type='email' name='email' value={values.email} handleChange={handleChange}/>
                 <FormRow type='password' name='password' value={values.password} handleChange={handleChange}/>
                 <button type='submit' className='btn btn-block'>
-                    submit
+                    {isLoading ? 'please wait...' : 'submit'}
                 </button>
                 <p>
                     {values.isMember ? 'Not a member yet?' : 'Already a member?'}
                     <button
                         type='button'
                         onClick={toggleMember}
-                        className='member-btn'>
+                        className='member-btn'
+                        disabled={isLoading}
+                    >
                         {values.isMember ? 'Register' : 'Login'}
                     </button>
                 </p>
