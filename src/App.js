@@ -1,6 +1,12 @@
+import Landing from "./pages/Landing";
+import styled from "styled-components";
+
+
 
 const App = () => (
-    <h1>jobster</h1>
+    <div>
+        <Landing/>
+    </div>
 );
 
 export default App;
