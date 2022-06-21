@@ -1,6 +1,7 @@
 import {FormRow, Logo} from "../components";
 import Wrapper from "../assets/wrappers/RegisterPage";
 import {useState} from "react";
+import {toast} from "react-toastify";
 
 
 const initialState = {
@@ -11,7 +12,9 @@ const Register = () => {
     const [values, setValues] = useState(initialState)
 
     const handleChange = (e) => {
-
+        const name = e.target.name;
+        const value = e.target.value;
+        setValues({...values, [name]: value})
     }
 
     const toggleMember = () => {
@@ -20,6 +23,11 @@ const Register = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+        const {name, email, password, isMember} = values;
+        if (!email || !password || (!isMember && !name)) {
+            toast.error('Please Fill Out All The Fields')
+            return
+        }
     }
 
     return (
