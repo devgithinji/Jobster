@@ -1,14 +1,9 @@
 # Jobster
 
-Project in Action - [Jobster](https://redux-toolkit-jobster.netlify.app/)
+Click [here](https://jobstar-ke.netlify.app/landing) to view application
 
-#### React Course
 
-[My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
-
-#### Support
-
-Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
+Dennis Githinji 👍 
 
 #### Run The App Locally
 
@@ -142,7 +137,6 @@ const El = styled.el`
 ```
 
 - element can be any html element (div,button,section, etc)
-
 - no name collisions, since unique class
 - vscode-styled-components extension
 - colors and bugs
@@ -205,7 +199,6 @@ export default Logo;
 #### 13) React Router 6
 
 - Please Reference React Router 6 Section
-
 - [React Router Docs](https://reactrouter.com/docs/en/v6)
 
 ```sh
@@ -607,13 +600,11 @@ npm install axios
 
 - Root URL
 - https://jobify-prod.herokuapp.com/api/v1/toolkit
-
 - NODE COURSE
 
 ###### Register USER
 
 - https://jobify-prod.herokuapp.com/api/v1/toolkit/auth/register
-
 - POST /auth/register
 - {name:'john',email:'john@gmail.com',password:'secret'}
 - sends back the user object with token
@@ -3002,7 +2993,6 @@ const handleSubmit = (e) => {
 #### 84) Pagination Setup
 
 - server returns 10 jobs per page
-
 - create
 - components/PageBtnContainer.js
 
