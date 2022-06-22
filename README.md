@@ -1,6 +1,6 @@
 # Jobster
 
-Click [here](https://jobstar-ke.netlify.app/landing) to view application
+Click [here](https://jobster-ke.netlify.app/landing) to view application
 
 
 Dennis Githinji 👍 
